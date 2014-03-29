@@ -1,0 +1,36 @@
+{% assign post = current %}
+
+{% capture content %}
+
+	<div class="grid">
+		<div class="unit whole single">
+			<div class="unit one-quarter">
+				<h3>More Posts</h3>
+				<ul>
+					<a href="/blog"><li>View All</li></a>
+				{% for single in site.posts limit: 20 %}
+					<a href="{{ single.url }}"><li>{{ single.title }}</li></a>
+				{% endfor %}
+				</ul>
+			</div>
+			<div class="unit three-quarters clearfix">
+				<h2>{{ post.title }}</h2>
+				<span>{{ post.date | date: "%b %d, %Y" }}</span>
+				<p>{{ post.body }}</p>
+			</div>
+		</div>
+		{% if parent %}
+			<div class="post-nav unit whole">
+				{% if previous %}
+		    		<a class="prev" href="{{post.previous.url}}">&lt;&lt; Previous Post</a>
+			    {% endif %}
+			    {% if next %}
+			    	<a class="next" href="{{post.next.url}}">Next Post &gt;&gt;</a>
+			    {% endif %}
+			</div>
+		{% endif %}
+	</div>
+	
+{% endcapture %}
+
+{% include 'layouts/default' %}

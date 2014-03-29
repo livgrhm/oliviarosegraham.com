@@ -1,0 +1,61 @@
+.post-preview
+	border-bottom: 1px solid $clouds
+	&:after
+		clear: both
+		content: ""
+		display: table
+	&:last-child
+		border-bottom: none
+
+aside, section
+	float: left
+	display: inline
+	padding: 10px
+
+aside
+	width: 27%
+	font-family: $roboto
+	span
+		font-size: 12px
+
+section
+	width: 67%
+	font-family: $roboto
+	font-size: 18px
+
+a.more-link
+	font-size: 12px
+	display: block
+	float: right
+	margin: 10px 0
+
+.single
+	padding: 20px
+	font-size: 18px
+	span
+		font-size: 12px
+	p
+		margin: 15px 0
+	ul
+		padding: 0
+		list-style-type: none
+		font-size: 14px
+		a
+			border-bottom: 1px solid $clouds
+			display: block
+			li
+				padding: 10px 5px
+				&:hover
+					background-color: $clouds
+			&:last-child
+				border-bottom: none
+
+.post-nav
+	border-top: 1px solid $clouds
+	a
+		display: block
+		font-size: 14px
+		&.prev
+			float: left
+		&.next
+			float: right

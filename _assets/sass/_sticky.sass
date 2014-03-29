@@ -1,0 +1,18 @@
+/* Sticky Footer */
+
+*
+	margin: 0
+
+html, body
+	height: 100%
+
+.container
+	min-height: 100%
+	margin-bottom: -80px // Equal to footer height
+
+.container:after
+	content: ''
+	display: block
+
+.sticky, .container:after
+	height: 80px	// Equal to footer height

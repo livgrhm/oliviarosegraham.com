@@ -1,0 +1,14 @@
+<div class="grid">
+	<div class="unit half info">
+		<span>&copy; Olivia Graham {{ site.time | date: '%Y' }}</span>
+	</div>
+	<div class="unit half social">
+		{% for item in site.meta %}
+			{% assign key = item.key | split: '_' %}
+			{% if key[0] == 'link' %}
+				<a href="{{ item.value }}" target="_blank" class="ss-icon">{{ key[1] }}</a>
+			{% endif %}
+		{% endfor %}
+		</dl>
+	</div>
+</div>

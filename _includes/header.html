@@ -1,0 +1,16 @@
+<div class="grid">
+	<div class="unit half">
+		<a href="{{ site.permalink }}"><span class="logo">Olivia Graham</span></a>
+	</div>
+	<div class="unit half">
+		<nav role="navigation">
+			<ul>
+		  	{% for page in site.pages %}
+		  		{% assign p = url | split: '/' %}
+		  		{% assign po = '/' | append: p[1] %}
+		    	<li><a href="{{page.url}}"{% if page.url == url or page.url == po %}class="selected"{% endif %}>{{page.title}}</a></li>
+		  	{% endfor %}
+		  	</ul>
+		</nav>
+	</div>
+</div>
