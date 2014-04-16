@@ -1,0 +1,22 @@
+{% capture content %}
+
+	<div class="grid">
+		<div class="unit whole">
+			{% for post in posts limit: 20 %}
+				<div class="post-preview">
+					<aside>
+						<h3>{{ post.title }}</h3>
+						<span>{{ post.date | date: "%B %Y" }}</span><br>
+						<a href="{{ post.assets[0].url }}" target="_blank" title="{{ post.assets[0].meta['name'] }}" class="ss-icon asset-link">link</a>
+					</aside>
+					<section>
+						<p>{{ post.body }}</p>
+					</section>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+
+{% endcapture %}
+
+{% include 'layouts/default' %}
